@@ -3,12 +3,40 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Hangman</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <!-- External Stylesheet -->
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <!-- External Javascript -->
     <script src="assets/javascript/game.js"></script>
 </head>
 <body>
+
+    <div class="jumbotron">
+        <h1 class="display-4">Javascript Hangman Game</h1>
+            <p class="lead">US State Capitals</p>
+            <hr class="my-4">
+            <p>Use the letter keys to guess the chosen State Capital</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Click to Play!</a>
+    </div>
+
+    <div class="col-md-6 gameplay-column">
+        <h1>Current Word</h1>
+        <h2 id="currentWord"></h2>
+        <h3>Guesses Remaining</h3>
+        <h3 id="remainingGuesses"></h3>
+        <h4>Letters Guessed</h4>
+        <h4 id="guessedLetters"></h4>
+        <h5>Wins</h5>
+        <h5 id="totalWins"></h5>
+        <h6>Losses</h6>
+        <h6 id="totallosses"></h6>
+    </div>
+
+
     
 </body>
 </html>
