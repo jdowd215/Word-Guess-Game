@@ -13,38 +13,54 @@
 var wordBank = [        // Word list
     "olympia",
     "salem",
-    "sacramento",
-    "tallahassee",
+    "denver",
+    "phoenix",
     "topeka",
-    "providence",
+    "juneau",
     "austin",
     "boston",
 ];
+//player wins
 var wins = 0;
+//player losses
 var losses = 0;
-const guessesRemaining = 10;
-// an array of letters that are not in the word:
-var wrongGuesses = [];
-// store user input from keyboard event:
-var userInput;
-// randomly chosen word from our workBank:
+// max number of tries player has
+var maxGuesses = 10;
+// stores letters user has guessed
+var guessedLetters = [];
+// randomly chosen word from our wordBank:
 var currentWord;
-// letters remaining
-var remainingLetters = [];
-var underscores = [];
+// actual word being guessed by player;
+var chosenWord = [];
+// how many tries a player has remaining
+var remainingGuesses = 0;
+//# of underscores in chosen word
+var gameStart = false;
+// flag for "press any key to play again"
+var finished = false;
+
 
 
 // ===== FUNCTIONS ===== //
-// function reset(){
+//reset game variables
+function resetGame(){
+    guessesRemaining = maxGuesses;
+    gameStart = false;
     // randomly choose a word from our wordBank
-    var userInput = wordBank[Math.floor(Math.random() * wordBank.length)];
+    currentWord = wordBank[Math.floor(Math.random() * wordBank.length)];
     // ex: 
     // input --> currentWord = 'seattle'
     // define the length of currentWord
-    var currentWord = [];
-    for (var i = 0; i < wordBank.length; i++){
-        currentWord[i] = "_";
+
+    //clear out arrays
+    var guessedLetters = [];
+    var chosenWord = [];
+
+    //select guessing word
+    for (var i = 0; i < wordBank[currentWord].length; i++) {
+        chosenWord.push("_");
     }
+    
     // add underscores to the underscores array according to the length of the word
     // TODO:
     // we need to write syntax using the currentWord as our input and this should output an 
